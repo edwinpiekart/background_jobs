@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-8">
+    <h1>Background job view</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-10 col-md-4">
+    <%= link_to 'Edit', edit_back_job_path(@back_job) %> |
+    <%= link_to 'Back', back_jobs_path %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <tr>
+        <th>uri string</th>
+        <td><%= @back_job.uri_str %></td>
+      </tr>
+      <tr>
+        <th>JSON params</th>
+        <td><%= @back_job.json_params %></td>
+      </tr>
+      <tr>
+        <th>retries</th>
+        <td><%= @back_job.retries %></td>
+      </tr>
+      <tr>
+        <th>exceptions</th>
+        <td><%= @back_job.exceptions %></td>
+      </tr>
+      <tr>
+        <th>response body</th>
+        <td><%= @back_job.response_body %></td>
+      </tr>
+    </table>
+  </div>
+</div>

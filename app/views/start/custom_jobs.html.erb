@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-8">
+    <h1>Custom job</h1>
+  </div>
+
+  <div class="col-md-4 top-buffer">
+    <%= link_to 'Home', start_index_path %>
+  </div>
+</div>
+
+<%= form_tag('/start/get_custom_job', method: :get, role: 'form') do %>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <%= label_tag :std_worker %>
+          <%= select_tag :std_worker,
+                         options_for_select([['Weather in Warsaw', 'WeatherQuery'],
+                                             ['Weather in London', 'WeatherLondonQuery'],
+                                             ['Weather in Amsterdam', 'WeatherAmsterdamQuery'],
+                                             ['My IP', 'MyIpQuery']]),
+                         class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :retries %>
+          <%= text_field_tag :retries, '0', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :exceptions %>
+          <%= text_field_tag :exceptions, '', class: 'form-control' %>
+        </div>
+
+        <%= submit_tag 'Save', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

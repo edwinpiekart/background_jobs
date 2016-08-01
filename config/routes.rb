@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'start/index'
+  require 'sidekiq/web'
+  require 'sidekiq-status/web'
+
+  get 'start/index', 'start/get_weather', 'start/get_my_ip', 'start/custom_jobs',
+      'start/get_custom_job', 'start/create_batch', 'start/get_batch'
+
+  mount Sidekiq::Web, at: '/sidekiq'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +21,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :back_jobs
 
   # Example resource route with options:
   #   resources :products do

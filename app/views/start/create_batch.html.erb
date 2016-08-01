@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8">
+    <h1>Create weather batch</h1>
+  </div>
+
+  <div class="col-md-4 top-buffer">
+    <%= link_to 'Home', start_index_path %>
+  </div>
+</div>
+
+<%= form_tag('/start/get_batch', method: :get, role: 'form') do %>
+    <div class="row top-buffer">
+      <div class="col-md-5">
+        <div class="form-group">
+          <%= label_tag :cities, 'Cities with short country divided by semicolon' %>
+          <%= text_area_tag :cities, 'Warsaw,pl;Paris,fr;Milano,it', class: 'form-control' %>
+        </div>
+
+        <%= submit_tag 'Save', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

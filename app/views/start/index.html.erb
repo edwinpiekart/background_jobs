@@ -1,2 +1,43 @@
-<h1>Start#index</h1>
-<p>Find me in app/views/start/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <h1>Select type of job</h1>
+  </div>
+
+  <div class="col-md-4 top-buffer">
+    <%= link_to 'Go to back jobs page', back_jobs_path %>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-md-offset-2 col-md-8">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Raw background job</th>
+        <th>Configured background job</th>
+        <th>Simple weathers batch</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <%= link_to 'New raw background job', new_back_job_path %>
+        </td>
+
+        <td>
+          <%= link_to 'Weather job', start_get_weather_path %>
+          <br/>
+          <%= link_to 'My IP job', start_get_my_ip_path %>
+          <br/>
+          <br/>
+          <%= link_to 'Custom job', start_custom_jobs_path %>
+        </td>
+
+        <td>
+          <%= link_to 'Create weather batch', start_create_batch_path %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

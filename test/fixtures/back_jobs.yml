@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uri_str: MyString
+  json_params: '{}'
+  response_body: ''
+  retries: 0
+  exceptions: ''
+
+two:
+  uri_str: MyString
+  json_params: '{}'
+  response_body: ''
+  retries: 1
+  exceptions: ''
